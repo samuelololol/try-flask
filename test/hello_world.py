@@ -8,10 +8,17 @@ app = Flask(__name__)
 
 app.debug= True
 
+
+# GET /
+# response:
+# Hello World
 @app.route('/')
 def root():
     return "Hello World!"
 
+# GET /abc
+# response:
+# Hello World! This is: /abc
 @app.route('/<route_name>')
 def route_name(route_name):
     return "Hello World! This is: /%s" % route_name
